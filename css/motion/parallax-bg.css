@@ -1,0 +1,61 @@
+/* Simple Parallax for Backgrounds */
+
+.parallax-bg {
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    
+    /* ideally these should be layered to avoid any redundancy */
+    background: 50% 0 fixed no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*
+    Section-specific customization: create sections for each content area.
+    
+ */
+
+.section-solution {
+    background: url('../../img/bg/Fans.png') 50% 0 fixed no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 200px 0;
+    color: rgb(255, 255, 255);
+}
+.section-benefits { 
+    background: rgb(255, 255, 255);
+    padding: 200px 0;
+    color: rgb(0, 0, 0);
+}
+.section-problem { 
+    background: url('../../img/bg/Cheering.png') 50% 0 fixed no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 150px 0;
+    color: rgb(255, 255, 255);
+}
+.section-pains { 
+    background: rgb(255, 255, 255);
+    padding: 200px 0;
+    color: rgb(0, 0, 0);
+}
+.home { 
+  background: rgb(128, 128, 128) 50% 0 fixed; 
+  background-image: -webkit-linear-gradient(top, rgb(250, 49, 104) 0%, rgb(58, 58, 58) 100%);
+  background-image:      -o-linear-gradient(top, rgb(250, 49, 104) 0%, rgb(58, 58, 58) 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(250, 49, 104)), to(rgb(58, 58, 58)));
+  background-image:         linear-gradient(to bottom, rgb(250, 49, 104) 0%, rgb(0, 0, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=rgb(1, 146, 248), endColorstr=rgb(58, 58, 58), GradientType=0);
+  background-repeat: repeat-x;
+  padding: 200px 0;
+  color: rgb(255, 255, 2555);
+}

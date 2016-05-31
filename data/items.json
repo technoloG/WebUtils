@@ -1,0 +1,38 @@
+{
+    "data": {
+	    "items": [
+	    {
+    	    "id": "0",
+    	    "info": "3 elements",
+    	    "components": [
+    	        {
+                "element": "element 0-1"
+                },
+    	        {
+                "element": "element 0-2"
+    	        },
+    	        {
+                "element": "element 0-3"
+            }]
+	    },
+        {
+    	    "id": "1",
+    	    "info": "1 element",
+    	    "components": [
+    	    {
+                "element": "element 1-1"
+    	    }]
+        },
+        {
+    	    "id": "2",
+    	    "info": "2 elements",
+    	    "components": [
+    	        {
+                "element": "element 2-1"
+    	        },
+    	        {
+                "element": "element 2-1"
+    	    }]
+        }]
+    }
+}

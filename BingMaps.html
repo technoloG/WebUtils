@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        <div id="printoutPanel"></div>
+        
+        <div id="mapControl" style='width: 100vw; height: 100vh;'></div>
+        <script type='text/javascript'>
+            var mapOptions = {
+                credentials: "ApwsHf4bCtb-4jgDMljIeSddhb5ub0r1_rebI3I8Xl-9ikqPkSvnqAQ-rlzgbPwV"
+            };
+
+            function GetMap() {
+                var map = new Microsoft.Maps.Map(document.getElementById("mapControl"), mapOptions);
+            };
+        </script>
+        <script type="text/javascript" src="http://www.bing.com/api/maps/mapcontrol?callback=GetMap" async defer></script>
+    </body>
+</html>

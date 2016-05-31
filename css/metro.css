@@ -1,0 +1,186 @@
+.int-wrap .colored-boxes {
+	padding: 0px 0px 60px;
+}
+.int-wrap .colored-boxes::after {
+	clear: both; display: block; content: " ";
+}
+@media screen and (max-width:599px)
+{
+.int-wrap .colored-boxes .color-box {
+	margin: 0px 0px 25px;
+}
+.int-wrap .colored-boxes .color-box img {
+	width: 100%;
+}
+}
+@media screen and (max-width:899px) and (min-width:600px)
+{
+.int-wrap .colored-boxes .color-box {
+	margin: 0px 4.1% 25px 0px; width: 47.95%; float: left;
+}
+.int-wrap .colored-boxes .color-box img {
+	width: 100%;
+}
+.int-wrap .colored-boxes .color-box .color-bar {
+	width: 100%;
+}
+.int-wrap .colored-boxes :nth-child(2n+2).color-box {
+	margin-right: 0px;
+}
+.int-wrap .colored-boxes :nth-child(2n+1).color-box {
+	clear: both;
+}
+}
+@media screen and (min-width:900px)
+{
+.int-wrap .colored-boxes .color-box {
+	margin: 0px 4.1% 0px 0px; width: 21.92%; float: left;
+}
+.int-wrap .colored-boxes .color-box img {
+	width: 100%;
+}
+.int-wrap .colored-boxes .color-box img {
+	width: 100%;
+}
+.int-wrap .colored-boxes :nth-child(4n+1).color-box {
+	clear: both;
+}
+.int-wrap .colored-boxes :nth-child(4n+4).color-box {
+	margin-right: 0px;
+}
+}
+.int-wrap .colored-boxes .col-last {
+	margin: 0px 0px 25px; float: left;
+}
+.int-wrap .colored-boxes .color-bar {
+	background: rgb(186, 20, 26); width: 100%;
+}
+@media screen and (max-width:767px)
+{
+.int-wrap .colored-boxes .color-bar {
+	width: 91%;
+}
+}
+@media screen and (max-width:900px) and (min-width:768px)
+{
+.int-wrap .colored-boxes .color-bar {
+	width: 51%;
+}
+}
+.int-wrap .colored-boxes .color-bar a {
+	margin: 0px; padding: 20px 0px 20px 30px; color: rgb(255, 255, 255); font-size: 1.31em; display: block;
+}
+.int-wrap .colored-boxes .color-bar > span {
+	margin: 0px; padding: 20px 0px 20px 30px; color: rgb(255, 255, 255); font-size: 1.31em; display: block;
+}
+.int-wrap .colored-boxes .color-bar a em {
+	padding: 0px 20px 0px 0px; float: right; display: block;
+}
+.int-wrap .colored-boxes .color-bar > span em {
+	padding: 0px 20px 0px 0px; float: right; display: block;
+}
+@media screen and (max-width:1050px)
+{
+.int-wrap .colored-boxes .color-bar a {
+	padding: 20px 0px 20px 15px; font-size: 1.12em;
+}
+.int-wrap .colored-boxes .color-bar > span {
+	padding: 20px 0px 20px 15px; font-size: 1.12em;
+}
+}
+.int-wrap .colored-boxes .gray-box {
+	background: rgb(220, 220, 220); padding: 20px;
+}
+.int-wrap .colored-boxes .gray-box > strong {
+	display: block;
+}
+.int-wrap .colored-boxes .gray-box p {
+	padding: 0px;
+}
+.int-wrap .colored-boxes .gray-box span {
+	padding: 0px;
+}
+.int-wrap .colored-boxes .gray-box a:link {
+	margin: 0px; color: rgb(0, 0, 0); line-height: 1.2em; font-size: 2.18em; font-weight: 200;
+}
+.int-wrap .colored-boxes .gray-box a:active {
+	margin: 0px; color: rgb(0, 0, 0); line-height: 1.2em; font-size: 2.18em; font-weight: 200;
+}
+.int-wrap .colored-boxes .gray-box a:visited {
+	margin: 0px; color: rgb(0, 0, 0); line-height: 1.2em; font-size: 2.18em; font-weight: 200;
+}
+.int-wrap .colored-boxes .gray-box p {
+	margin: 0px; color: rgb(0, 0, 0); line-height: 1.2em; font-size: 2.18em; font-weight: 200;
+}
+.int-wrap .colored-boxes .gray-box strong {
+	margin: 0px; color: rgb(0, 0, 0); line-height: 1.2em; font-size: 2.18em; font-weight: 200;
+}
+.int-wrap .colored-boxes .gray-box a:link span {
+	background: url("images/arrow-black.png") no-repeat right; margin: 15px 0px 0px; width: 37px; height: 24px; text-indent: -9999px; float: right; display: block;
+}
+.int-wrap .colored-boxes .gray-box a:active span {
+	background: url("images/arrow-black.png") no-repeat right; margin: 15px 0px 0px; width: 37px; height: 24px; text-indent: -9999px; float: right; display: block;
+}
+.int-wrap .colored-boxes .gray-box a:visited span {
+	background: url("images/arrow-black.png") no-repeat right; margin: 15px 0px 0px; width: 37px; height: 24px; text-indent: -9999px; float: right; display: block;
+}
+.int-wrap .colored-boxes .gray-box p span {
+	background: url("images/arrow-black.png") no-repeat right; margin: 15px 0px 0px; width: 37px; height: 24px; text-indent: -9999px; float: right; display: block;
+}
+.int-wrap .colored-boxes .gray-box strong span {
+	background: url("images/arrow-black.png") no-repeat right; margin: 15px 0px 0px; width: 37px; height: 24px; text-indent: -9999px; float: right; display: block;
+}
+.int-wrap .colored-boxes .gray-box:hover {
+	background: rgb(190, 190, 190);
+}
+.int-wrap .colored-boxes .no-hov.gray-box:hover {
+	background: rgb(220, 220, 220);
+}
+.int-wrap .color-out {
+	background: rgb(80, 80, 80); padding-top: 25px;
+}
+.int-wrap .color-out section {
+	background: rgb(80, 80, 80);
+}
+.int-wrap .color-out section .content-bottom h3 {
+	text-align: center; color: rgb(255, 255, 255);
+}
+.int-wrap .color-out section .content-bottom .color-bar-new {
+	background: rgb(0, 0, 0);
+}
+.int-wrap .color-out section .content-bottom .color-bar-new a {
+	margin: 0px; padding: 12px 0px 12px 30px; color: rgb(255, 255, 255); font-size: 1.31em; font-weight: 400; display: block;
+}
+.int-wrap .color-out section .content-bottom .color-bar-new strong {
+	margin: 0px; padding: 12px 0px 12px 30px; color: rgb(255, 255, 255); font-size: 1.31em; font-weight: 400; display: block;
+}
+@media screen and (max-width:1050px)
+{
+.int-wrap .color-out section .content-bottom .color-bar-new a {
+	padding: 12px 0px 12px 15px; font-size: 1.12em;
+}
+.int-wrap .color-out section .content-bottom .color-bar-new strong {
+	padding: 12px 0px 12px 15px; font-size: 1.12em;
+}
+}
+.int-wrap .color-out section .content-bottom .color-bar-new a em {
+	padding: 0px 20px 0px 0px; margin-top: -40px; float: right; display: block;
+}
+.int-wrap .color-out section .content-bottom .color-bar-new strong em {
+	padding: 0px 20px 0px 0px; margin-top: -40px; float: right; display: block;
+}
+.int-wrap .color-out section .content-bottom .color-bar-new a span {
+	font-size: 0.68em; display: block;
+}
+.int-wrap .color-out section .content-bottom .color-bar-new strong span {
+	font-size: 0.68em; display: block;
+}
+.int-wrap .color-out section .content-bottom .color-bar-dark.color-bar-new {
+	background: rgb(40, 40, 40);
+}
+.int-wrap .color-out section .content-bottom .color-bar-dark.color-bar-new a {
+	padding: 23px 0px 23px 30px;
+}
+.int-wrap .color-out section .content-bottom .color-bar-dark.color-bar-new a em {
+	margin: 0px;
+}

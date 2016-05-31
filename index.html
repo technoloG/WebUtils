@@ -1,0 +1,485 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/i/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title></title>
+  <meta name="description" content="">
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/Site.css">
+
+  <link rel="stylesheet" href="css/WebUtilities.css">
+  <link rel="stylesheet" href="css/bingmaps.css">
+
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+
+
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+       Modernizr enables HTML5 elements & feature detects for optimal performance.
+       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="js/libs/modernizr-2.5.3.min.js"></script>
+</head>
+<!--
+<body onload="GetMap();">
+  -->
+<body>
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+  <header>
+
+  </header>
+
+  <div id="home" role="main">
+
+    <!-- Navigation -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><span>Web Utils</span></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden"><a class="page-scroll" href="#page-top"></a></li>
+                    <li><a class="page-scroll" href="#home">Home</a></li>
+                    <li><a class="page-scroll" href="#utils">Utilities</a></li>
+                    <li><a class="page-scroll" href="#maps">Maps</a></li>
+                    <li><a class="page-scroll" href="#networking">Networking</a></li>
+                    <li><a class="page-scroll" href="#fx">FX</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Site Area-->
+    <div class="container body-content">
+
+    <div id="hero" class="row">
+      <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-3">
+              <!--
+              <div class="thumbnail text-center">
+                -->
+                  <img src="holder.js/250x250?theme=initials&text=WU" alt="image" class="img-responsive img-circle"> 
+                  <!--
+                  <div class="caption caption-overlay">
+                      <p class="lead">WU</p>
+                  </div>
+                    -->
+              <!--
+              </div> 
+                -->
+            </div>
+            <div class="col-md-9">
+                <h1>Web Utilities for JavaScript</h1>
+                <p class="lead">Simple, elegant, concise</p>
+            </div>
+        </div>
+      </div>
+      <div id="box-search"> 
+      </div> 
+    </div>
+
+    <!-- Simple HTML5 and JavaScript Area-->
+    <div id="utils" class="row">
+      <div class="masthead">
+        <h3 class="text-muted">HTML 5 API features</h3>
+      </div>
+      <div>
+        <h3>Local Storage</h3>
+        <form>
+            <div class="form-group">
+              <label for="txtData">Enter data to be saved</label>
+              <input id="txtData" class="form-control" type="text" value="testing storage"/>
+              <button id="btnSave" type="button" class="btn btn-default" value="Save" onclick="SaveClick()">Save</button>
+              <button id="btnLoad" type="button" class="btn btn-default" value="Load" onclick="LoadClick()">Load</button>
+            </div>
+            <p><span class="lead">Stored value: <span id="storage"></span></span></p>
+            <p>&nbsp;</p>
+        </form>
+      </div>
+      <div>
+        <h3>Location</h3>
+        <p><span class="lead">current location: <span id="coordinates"></span></span></p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Networking Area-->
+    <div id="networking" class="row">
+      <div class="masthead">
+        <h3 class="text-muted">Networking Utilities</h3>
+        <p><span class="lead">Online and Session</span></p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <h3>Invoke API</h3>
+        <form data-bind="submit: query">
+            <div class="form-group">
+            <label>User</label>
+            <input class="form-control" type="text" readonly data-bind="value: user" />
+            </div>
+            <div class="form-group">
+            <label>Result</label>
+            <input class="form-control" type="text" readonly data-bind="value: result" />
+            </div>
+            <div class="form-group">
+            <button type="button" class="btn btn-default">Run Query</button>
+            </div>
+        </form>
+      </div>
+
+      <div class="col-sm-4">
+        <h3>Register</h3>
+        <form data-bind="submit: register">
+            <div class="form-group">
+            <label>Email</label>
+            <input class="form-control" type="text" data-bind="value: registerEmail"/>
+            </div>
+            <div class="form-group">
+            <label>Password</label>
+            <input class="form-control" type="password" data-bind="value: registerPassword"/>
+            </div>
+            <div class="form-group">
+            <label>Confirm Password</label>
+            <input class="form-control" type="password" data-bind="value: registerPassword2" />
+            </div>
+            <div class="form-group">
+            <button type="button" class="btn btn-default">Register</button>
+            </div>
+        </form>
+      </div>
+
+      <div class="col-sm-4">
+        <h3>Log In</h3>
+        <form data-bind="submit: login">
+            <div class="form-group">
+            <label>Email</label>
+            <input class="form-control" type="text" data-bind="value: loginEmail"/>
+            </div>
+            <div class="form-group">
+            <label>Password</label>
+            <input class="form-control" type="password" data-bind="value: loginPassword"/>
+            </div>
+            <div class="form-group">
+            <button type="button" class="btn btn-default">Log In</button>
+            <button type="button" data-bind="click: logout" class="btn btn-default">Log Out</button>
+            </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ko with: NetworkingVM -->
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <h3>Local Data</h3>
+        <form data-bind="submit: load">
+            <div class="form-group">
+            <label for="txtLocalPath">Local Path</label>
+            <input id="txtLocalPath" class="form-control" type="text" data-bind="value: localPath" />
+            </div>
+            <div class="form-group">
+            <label for="txtFileName">File Name</label>
+            <input id="txtFileName" class="form-control" type="text" data-bind="value: fileName" />
+            </div>
+            <div class="form-group">
+            <button type="button" id="btnGetLocalData" data-bind="click: load" class="btn btn-default">Load Data</button>
+            </div>
+        </form>
+      </div>
+    </div>
+    <!-- /ko -->
+
+    <!-- ko with: NetworkingVM -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="resultsPanel" class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Results</h3>
+          </div>
+          <div class="panel-body">
+            <div id="resultsOutput" class="results">
+              <span data-bind="text: results"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /ko -->
+
+    <hr />
+
+    <!-- Maps Area: Bing Maps -->
+    <div id="maps" class="row">
+      <div class="masthead">
+        <h3 class="text-muted">Bing Maps</h3>
+        <p><span class="lead">Maps</span></p>
+        <p>&nbsp;</p>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+            <h3>Search and Map Entities Near a Location</h3>
+            <form data-bind="submit: search">
+                <div class="form-group">
+                <label for="txtQuery">Find</label>
+                <input id="txtQuery" type="text" class="form-control" value="Insert search term"/>
+                </div>
+                <div class="form-group">
+                <label for="selDistance">Search within</label>
+                <select id="selDistance" class="form-control">
+                    <option value="1">1</option>
+                    <option value="5">5</option>
+                    <option value="10" selected="selected">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="400">400</option>
+                </select>
+                </div>
+                <div class="form-group">
+                <label for="txtAddress">Kilometers of</label>
+                <input id="txtAddress" type="text" class="form-control" value="Insert Location/Address"/>
+                </div>
+                <div class="form-group">
+                <button type="button" id="btnSearchFor" class="btn btn-default" onclick="SearchFor()">Search</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <h3>Geolocation</h3>
+            <form>
+                <div class="form-group">
+                <label for="txtLocation">Find the coordinates for a location.</label>
+                <input id="txtLocation" class="form-control" type="text" value="Portland"/>
+                <button type="button" id="btnGeocode" class="btn btn-default" value="Geocode" onclick="GeocodeLocation()">Geocode</button>
+                </div>
+                <div class="form-group">
+                <label for="txtLatitude">Latitude</label>
+                <input id="txtLatitude" class="form-control" type="text" value="47.592"/>
+                <label for="txtLongitude">Longitude</label>
+                <input id="txtLongitude" class="form-control" type="text" value="-122.332"/>
+                <button type="button" id="btnReverseGeocode" class="btn btn-default" value="Reverse Geocode" onclick="ReverseGeocodeLocation()">Reverse Geocode</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <h3>Pushpins and Routes</h3>
+            <form>
+                <div class="form-group">
+                <label for="txtPushpin">Click the map to add a pushpin at that point.</label>
+                </div>
+                <div class="form-group">
+                <label for="txtStart">Calculate the route between two locations.</label>
+                <input id="txtStart" class="form-control" type="text" value="Seattle"/>
+                <input id="txtEnd" class="form-control" type="text" value="Portland"/>
+                <button type="button" id="btnCalcRoute" class="btn btn-default" value="Calculate Route" onclick="CalculateRoute()">Calculate Route</button>
+                </div>
+            </form>
+            <form>
+                <div class="form-group">
+                <button type="button" id="btnTraffic" class="btn btn-default" value="Get Traffic Incidents" onclick="GetTrafficIncidents()">Get Traffic Incidents</button>
+                </div>
+                <div class="form-group">
+                <button type="button" id="btnTraffic" class="btn btn-default" value="Get Elevations" onclick="GetElevations()">Get Elevations</button>
+                </div>
+            </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+            <div id="mapControl" class="mapControl"></div>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="controls" class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Map Controls</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form>
+                                <div class="form-group">
+                                <label for="mapZoom">Zoom</label>
+                                <select id="mapZoom" class="form-control" onchange="SetZoom()">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15" selected="selected">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                </select>
+                                </div>
+                                <!--
+                                <div class="form-group">
+                                <button type="button" id="btnZoom" class="btn btn-default" onclick="SetZoom()">Zoom</button>
+                                </div>
+                                  -->
+                                <div class="form-group">
+                                <label for="mapType">Map Type</label>
+                                <select id="mapType" class="form-control" onchange="SetMapType()">
+                                    <option value="r" selected="selected">Road</option>
+                                    <option value="a">Aerial</option>
+                                    <!--
+                                    <option value="streetside">Streetside</option>
+                                      -->
+                                </select>
+                                </div>
+                                <!--
+                                <div class="form-group">
+                                <button type="button" id="btnMapType" class="btn btn-default" onclick="SetMapType()">Change</button>
+                                </div>
+                                  -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="outputPanel" class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Results output</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="output" class="output">
+                            (output)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="mapImage" class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Static Image</h3>
+                        </div>
+                        <div class="panel-body text-center">
+                            <img id="mapStaticImage" class="mapStaticImage img-responsive" src="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Animation and Effects Area-->
+    <div id="maps" class="row">
+      <div class="masthead">
+        <h3 class="text-muted">Motion</h3>
+        <p><span class="lead">Animation and Effects</span></p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  <footer>
+
+  </footer>
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.12.3.min.js"><\/script>')</script>
+
+  <!-- Bootstrap via CDN -->
+  <script src="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/bootstrap.min.js"></script>
+
+  <!-- Knockout via CDN -->
+  <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.0.js"></script>
+
+  <script src="js/libs/bootstrap/holder.js"></script>
+  <script> 
+    Holder.addTheme("initials", { bg: "#7f7f7f", fg: "#a5a5a5", size: 48 })
+  </script>
+
+  <!-- BingMaps -->
+  <script src="js/WebUtils/bing/bingMapsControl.js"></script>
+  <!--
+  <script charset="UTF-8" type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+    -->
+  <script type="text/javascript" src="http://www.bing.com/api/maps/mapcontrol?callback=InitializeMapControl" async defer></script>
+
+  <!-- Application Scripts: Utilities -->
+  <script src="js/WebUtils/app.utils.js"></script>
+  <script src="js/WebUtils/app.networking.js"></script>
+  <script src="js/WebUtils/app.routing.js"></script>
+
+  <!--
+  <script src="js/WebUtils/wire/wire.js"></script>
+  <script src="js/WebUtils/motion/motion.js"></script>
+   -->
+
+  <!-- Application Scripts -->
+  <script src="js/app/app.js"></script>
+
+  <!-- Application Scripts: View Models -->
+  <script src="js/app/viewmodels/networking.viewmodel.js"></script>
+
+  <!-- scripts concatenated and minified via build script -->
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <!-- end scripts -->
+
+  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+       mathiasbynens.be/notes/async-analytics-snippet -->
+  <script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+</body>
+</html>
